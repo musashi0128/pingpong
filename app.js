@@ -14,7 +14,6 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
 // データベースを接続
 mongoose.connect("mongodb://localhost/blog");
 
@@ -22,7 +21,7 @@ mongoose.connect("mongodb://localhost/blog");
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
+// after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
