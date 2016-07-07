@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'okano' });
+  res.render('index', { title: 'kenzo okano' });
 });
 
 module.exports = router;
