@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require("method-override");
 var session = require("express-session");
-var csurf = require("csurf");
 var flash = require("connect-flash");
 var mongoose = require("mongoose");
 
@@ -45,7 +44,6 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }));
-app.use(csurf());
 app.use(flash());
 
 
