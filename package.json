@@ -17,11 +17,8 @@
     "method-override": "^2.3.6",
     "mongoose": "^4.5.3",
     "morgan": "~1.7.0",
-<<<<<<< .merge_file_1Ge5ea
-    "serve-favicon": "~2.3.0"
-=======
+
     "serve-favicon": "~2.3.0",
     "socket.io": "^1.4.8"
->>>>>>> .merge_file_NpJuhs
   }
 }

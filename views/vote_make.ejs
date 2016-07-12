@@ -123,19 +123,20 @@
  <script src="/socket.io/socket.io.js"></script>
     <script>
         $(function() {
-            var chat = io.connect('http://192.168.33.10:3000/chat');
+            var chat = io.connect('http://192.168.33.10:3000');
                 
             // emit: イベントを発信している
             // on: イベントを待ち受けている
             $('#myForm').submit(function(e) {
-                e.preventDefault();
-                chat.json.emit('emit_from_client', {
+                console.log($('#quesion').val());
+                chat.emit('emit_from_qustion', {
                     qs: $('#quesion').val(),
                     op1: $('#option1').val(),
                     op2: $('#option2').val(),
                     op3: $('#option3').val(),
                     op4: $('#option4').val()
                 });
+                e.preventdefault();
             });
         });
     </script>

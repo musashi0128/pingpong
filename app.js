@@ -15,7 +15,6 @@ var users = require('./routes/users');
 
 
 var socketio = require('socket.io');
-var io = socketio.listen(server);
 var fs = require('fs');
 
 var app = express();
@@ -33,7 +32,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 
 // HTTP METHOD を上書き
