@@ -10,7 +10,7 @@ var flash = require("connect-flash");
 var mongoose = require("mongoose");
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 
 var app = express();
 // データベースを接続
@@ -48,7 +48,7 @@ app.use(flash());
 
 
 app.use('/', routes);
-app.use('/users', users);
+// app.use('/users', users);
 
 // ...省略
 
