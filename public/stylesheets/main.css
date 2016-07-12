@@ -2049,8 +2049,8 @@
 			cursor: default;
 			list-style: none;
 			padding-left: 0;
-			width:40%;
-			margin: 0 auto;
+			float: right;
+			margin: 35px 0;
 		}
 
 			ul.actions li {

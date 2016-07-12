@@ -12,6 +12,9 @@ router.get('/room',function (req,res,next) {
 router.get('/owner',function (req,res,next) {
   res.render('room_owner',{title:"管理者"});
 });
+router.get('/vote_make',function (req,res,next) {
+  res.render('vote_make',{title:"アンケート作成"});
+});
 router.get('/member',function (req,res,next) {
   res.render('room_member',{title:"参加者"});
 });
