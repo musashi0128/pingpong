@@ -52,16 +52,19 @@
             <div class="inner">
                 <section>
                     <h4>Number & NAME</h4>
-                    <form method="get" action="/entry">
+                    <form id="joinroom" method="get" action="/vote_view"> 
                         <div class="row uniform">
                             <div class="6u 12u$(xsmall)">
-                                <input type="text" name="demo-number" id="demo-email" value="" placeholder="Number" />
-
+                                <select id="rooms">
+                                    <option value="room1">Room1</option>
+                                    <option value="room2">Room2</option>
+                                    <option value="room3">Room3</option>
+                                    <option value="room4">Room4</option>
+                                </select>
                             </div>
                             <div class="6u$ 12u$(xsmall)">
-                                <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+                                <input type="text" name="demo-name" id="name" value="" placeholder="Name" />
                             </div>
-
                             <div class="12u$">
                                 <ul class="actions">
                                     <li><input type="submit" value="Room Init" class="special" id="entry" /></li>
@@ -72,11 +75,26 @@
                 </section>
             </div>
         </section>
-
     </article>
-
-
-
 </div>
+<script src="/socket.io/socket.io.js"></script>
+    <script>
+        $(function() {
+            var chat = io.connect('http://192.168.33.10:3000');   
+            chat.on("connect",function(message) {
+                console.log("接続しました");
+            })
+            // emit: イベントを発信している
+            // on: イベントを待ち受けている
+            $('#joinroom').submit(function(e) {
+                console.log($('#rooms').val());
+                chat.emit('emit_from_room', {
+                    room: $('#rooms').val(),
+                    name: $('#name').val()
+                });
+                //return false;
+            });
+        });
+    </script>
 </body>
 </html>

@@ -82,6 +82,20 @@
 					console.log(data.value);
 				})
 
+
+				function appendMessage(text) {
+					$("#messageView").append( "<div>" + text + "</div>" );
+				}
+
+
+				$('.button').click(function(){
+					socket.emit('vote', {vote_option: $(this).val()});
+					console.log($(this).val());
+					$('.button').remove();
+					$('.button_box').html('結果をお待ち下さい');
+					return false;
+				});
+
 			});
 		</script>
 

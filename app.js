@@ -1,5 +1,4 @@
 var express = require('express');
-var io = require('socket.io')(http);
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -15,13 +14,10 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 
-//socket.ioに接続
+var socketio = require('socket.io');
+var fs = require('fs');
+
 var app = express();
-var http = require('http').Server(app);
-
-
-
-
 // データベースを接続
 mongoose.connect("mongodb://localhost/blog");
 
@@ -36,6 +32,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // HTTP METHOD を上書き
 // https://github.com/expressjs/method-override#custom-logic
@@ -60,8 +57,6 @@ app.use(flash());
 app.use('/', routes);
 app.use('/users', users);
 
-
 // ...省略
 
 module.exports = app;
-

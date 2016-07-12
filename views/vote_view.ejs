@@ -2,6 +2,7 @@
 <html>
 <head>
     <title><%= title %></title>
+
     <link rel="stylesheet" href="/stylesheets/main.css" />
     <!-- Scripts -->
     <script src="/js/jquery.min.js"></script>
@@ -12,6 +13,22 @@
     <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
     <script src="/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+            var i = 4;
+            var v = 4;
+            $("#button_add").click(function () {
+                i++;
+                v++;
+                function add() {
+                    var div_element = document.createElement("#button_add");
+                    div_element.innerHTML = '<input type="button" value=v>';
+                    var parent_object = document.getElementById("add_button");
+                    parent_object.appendChild(div_element);
+                }
+            });
+        };
+    </script>
     <style>
         .button{
             width:200px;
@@ -26,6 +43,7 @@
             margin: 0 auto !important;
         }
     </style>
+
 
 </head>
 <body>
@@ -66,32 +84,44 @@
             <div class="inner">
                 <section>
                     <h4>質問記入欄</h4>
-                    <form method="get" action="/vote_view" id="question">
-                        <div class="row uniform button_box">
-                            <input type="button" class="button" value="1" id="option1">
+                    <input type="button" class="button" value="問題を表示する" id="button_add">
+                    
+                    <form method="get" action="/vote_view" id="ans_feild">
+                    <ul id="logs"></ul>
+                        <div class="row uniform button_box" id="add_button"">
+                
+                            <!--<input type="button" class="button" value="1" id="option1">
                             <input type="button" class="button" value="2" id="option2">
                             <input type="button" class="button" value="3" id="option3">
-                            <input type="button" class="button" value="4" id="option4">
+                            <input type="button" class="button" value="4" id="option4">-->
+                        
                         </div>
                     </form>
                 </section>
+                <div id="add_button"></div>
             </div>
         </section>
+        <div id="messageView"></div>
     </article>
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-        $(function() {
-            var socket = io('http://192.168.33.10:3000', {'transports': ['websocket', 'polling']});
-            $('.button').click(function(){
-                socket.emit('vote', {vote_option: $(this).val()});
-                console.log($(this).val());
-                $('.button').remove();
-                $('.button_box').html('結果をお待ち下さい');
-                return false;
-            });
-        });
-    </script>
-
 </div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    $(function() {
+        var chat = io.connect('http://192.168.33.10:3000');
+        chat.on('emit_from_server',function(data){
+            console.log(data.qs);
+            $('#logs').append($('<li>').text(data.qs));
+            // var i = 4;
+            // $("#button_add").click(function () {
+            //     i++;
+            //     function addbuton() {
+            //         $('.button_box').append('<input type="button" value='+v+'>');
+            //         var parent_object = document.getElementById("add_button");
+            //         parent_object.appendChild(div_element);
+            //     }
+            // });
+        });
+    });
+</script>
 </body>
 </html>

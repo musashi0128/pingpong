@@ -2,6 +2,10 @@
 <html>
 <head>
     <title><%= title %></title>
+<<<<<<< .merge_file_8900q2
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+=======
+>>>>>>> .merge_file_KzOv13
     <link rel="stylesheet" href="/stylesheets/main.css" />
     <!-- Scripts -->
     <script src="/js/jquery.min.js"></script>
@@ -124,14 +128,15 @@
             // emit: イベントを発信している
             // on: イベントを待ち受けている
             $('#myForm').submit(function(e) {
-                e.preventDefault();
-                chat.json.emit('emit_from_client', {
+                console.log($('#quesion').val());
+                chat.emit('emit_from_qustion', {
                     qs: $('#quesion').val(),
                     op1: $('#option1').val(),
                     op2: $('#option2').val(),
                     op3: $('#option3').val(),
                     op4: $('#option4').val()
                 });
+                e.preventdefault();
             });
         });
     </script>

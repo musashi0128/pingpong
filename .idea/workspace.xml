@@ -3,7 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="d4ae7f1c-c6ca-4a27-9163-231da145f005" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< .merge_file_AGkJSM
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/www" afterPath="$PROJECT_DIR$/bin/www" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/socket.io/package.json" afterPath="$PROJECT_DIR$/node_modules/socket.io/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.ejs" afterPath="$PROJECT_DIR$/views/index.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/room.ejs" afterPath="$PROJECT_DIR$/views/room.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/room_member.ejs" afterPath="$PROJECT_DIR$/views/room_member.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/room_owner.ejs" afterPath="$PROJECT_DIR$/views/room_owner.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/vote_make.ejs" afterPath="$PROJECT_DIR$/views/vote_make.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/vote_view.ejs" afterPath="$PROJECT_DIR$/views/vote_view.ejs" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/room.ejs" afterPath="$PROJECT_DIR$/views/room.ejs" />
+>>>>>>> .merge_file_H11VBT
     </list>
     <ignored path="pingpong.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,14 +39,22 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .merge_file_AGkJSM
+            <state relative-caret-position="300">
+=======
             <state relative-caret-position="75">
+>>>>>>> .merge_file_H11VBT
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< .merge_file_AGkJSM
+      <file leaf-file-name="www" pinned="false" current-in-tab="true">
+=======
       <file leaf-file-name="www" pinned="false" current-in-tab="false">
+>>>>>>> .merge_file_H11VBT
         <entry file="file://$PROJECT_DIR$/bin/www">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -57,18 +77,41 @@
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .merge_file_AGkJSM
+            <state relative-caret-position="577">
+              <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
+=======
             <state relative-caret-position="355">
               <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="26" />
+>>>>>>> .merge_file_H11VBT
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< .merge_file_AGkJSM
+      <file leaf-file-name="room.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/room.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="547">
+              <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vote_make.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/vote_make.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+=======
       <file leaf-file-name="room.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/room.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
               <caret line="215" column="15" selection-start-line="215" selection-start-column="15" selection-end-line="215" selection-end-column="15" />
+>>>>>>> .merge_file_H11VBT
               <folding />
             </state>
           </provider>
@@ -77,8 +120,13 @@
       <file leaf-file-name="vote_view.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/vote_view.ejs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .merge_file_AGkJSM
+            <state relative-caret-position="1215">
+              <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
+=======
             <state relative-caret-position="382">
               <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
+>>>>>>> .merge_file_H11VBT
               <folding />
             </state>
           </provider>
@@ -95,6 +143,16 @@
         <option value="$PROJECT_DIR$/public/sass/main.scss" />
         <option value="$PROJECT_DIR$/public/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+<<<<<<< .merge_file_AGkJSM
+        <option value="$PROJECT_DIR$/views/vote_make.ejs" />
+        <option value="$PROJECT_DIR$/views/room_member.ejs" />
+        <option value="$PROJECT_DIR$/views/room_owner.ejs" />
+        <option value="$PROJECT_DIR$/views/room.ejs" />
+        <option value="$PROJECT_DIR$/views/vote_view.ejs" />
+        <option value="$PROJECT_DIR$/views/index.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/bin/www" />
+=======
         <option value="$PROJECT_DIR$/views/room_member.ejs" />
         <option value="$PROJECT_DIR$/views/room_owner.ejs" />
         <option value="$PROJECT_DIR$/app.js" />
@@ -103,6 +161,7 @@
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/views/vote_view.ejs" />
         <option value="$PROJECT_DIR$/views/room.ejs" />
+>>>>>>> .merge_file_H11VBT
       </list>
     </option>
   </component>
@@ -193,6 +252,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< .merge_file_AGkJSM
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pingpong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pingpong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+=======
+>>>>>>> .merge_file_H11VBT
         </subPane>
       </pane>
     </panes>
@@ -287,7 +363,11 @@
       <updated>1467863063474</updated>
       <workItem from="1467863064910" duration="4412000" />
       <workItem from="1468042674592" duration="18215000" />
+<<<<<<< .merge_file_AGkJSM
+      <workItem from="1468303376095" duration="22497000" />
+=======
       <workItem from="1468303376095" duration="31685000" />
+>>>>>>> .merge_file_H11VBT
     </task>
     <task id="LOCAL-00001" summary="レイアウト変更">
       <created>1468047342064</created>
@@ -310,6 +390,19 @@
       <option name="project" value="LOCAL" />
       <updated>1468294399367</updated>
     </task>
+<<<<<<< .merge_file_AGkJSM
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="45124000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-11" y="28" width="1400" height="833" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
     <task id="LOCAL-00004" summary="ルーム入室">
       <created>1468330050008</created>
       <option name="number" value="00004" />
@@ -328,6 +421,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> .merge_file_H11VBT
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -361,8 +455,12 @@
     <MESSAGE value="レイアウト変更" />
     <MESSAGE value="グラフ追加" />
     <MESSAGE value="選択肢フォーム追加" />
+<<<<<<< .merge_file_AGkJSM
+    <option name="LAST_COMMIT_MESSAGE" value="選択肢フォーム追加" />
+=======
     <MESSAGE value="ルーム入室" />
     <option name="LAST_COMMIT_MESSAGE" value="ルーム入室" />
+>>>>>>> .merge_file_H11VBT
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -469,66 +567,122 @@
         </state>
       </provider>
     </entry>
+<<<<<<< .merge_file_AGkJSM
+    <entry file="file://$PROJECT_DIR$/views/room_owner.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1111">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/views/vote_make.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="121" column="63" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="63" />
+>>>>>>> .merge_file_H11VBT
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< .merge_file_AGkJSM
+    <entry file="file://$PROJECT_DIR$/views/vote_view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
+=======
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+>>>>>>> .merge_file_H11VBT
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< .merge_file_AGkJSM
+    <entry file="file://$PROJECT_DIR$/views/vote_make.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+=======
     <entry file="file://$PROJECT_DIR$/views/vote_view.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
           <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
+>>>>>>> .merge_file_H11VBT
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< .merge_file_AGkJSM
+    <entry file="file://$PROJECT_DIR$/views/room.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+=======
     <entry file="file://$PROJECT_DIR$/views/room_owner.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+>>>>>>> .merge_file_H11VBT
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+<<<<<<< .merge_file_AGkJSM
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+=======
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+>>>>>>> .merge_file_H11VBT
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< .merge_file_AGkJSM
+    <entry file="file://$PROJECT_DIR$/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
+=======
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+>>>>>>> .merge_file_H11VBT
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .merge_file_AGkJSM
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="26" />
+>>>>>>> .merge_file_H11VBT
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< .merge_file_AGkJSM
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+=======
     <entry file="file://$PROJECT_DIR$/views/room.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="215" column="15" selection-start-line="215" selection-start-column="15" selection-end-line="215" selection-end-column="15" />
+>>>>>>> .merge_file_H11VBT
           <folding />
         </state>
       </provider>

@@ -5,9 +5,12 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 function skio() {
   // Socket.IO
+
   http.listen(app.get('port'), function() {
     console.log('listening!!!');
   });
+
+
   //socket.io
 
   io.on('connection', function(socket){
@@ -24,11 +27,20 @@ function skio() {
       io.sockets.emit("sousin",{poll:data.vote_option});
     });
 
+    socket.on('emit_from_room', function(data) {
+            socket.join(data.room);
+            // socket.emit('emit_from_server', '入室: ' + data.room);
+            socket.broadcast.to(data.room).emit('emit_from_server', {data: socket.id+"が接続しました"});
+        });
+    socket.on('emit_from_question',function(data) {
+          io.sockets.emit('emit_from_server',{data:data})
+        })
+
     //切断時のメッセージ
     socket.on('disconnect', function(){
       console.log('user disconnected');
     });
   });
-}
+};
 app.set('port', process.env.PORT || 3000);
 skio();

@@ -12,18 +12,13 @@
     <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
     <script src="/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.js"></script>
     <style>
         #myChart {
             margin: 0 auto;
             width:50% !important;
             height:50% !important;
         }
-        .tab{overflow:hidden;}
-        .tab li{background:#ccc; padding:5px 25px; float:left; margin-right:1px;list-style: none;}
-        .tab li.select{background:#eee;}
-        .content li{background:#eee; padding:20px;list-style: none;}
-        .hide {display:none;}
     </style>
 </head>
 <body>
@@ -54,20 +49,19 @@
 
     <!-- Main -->
     <article id="main">
+        <!--
+        <header>
+            <h2>Elements</h2>
+            <p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
+        </header>
+        -->
         <section class="wrapper style5">
             <div class="inner">
                 <section>
                     <h4>投票結果</h4>
+                    <!--グラフ挿入-->
+                    <canvas id="myChart" width="600px" height="600px"></canvas>
                 </section>
-                <ul class="tab">
-                    <li class="select">棒グラフ</li>
-                    <li>円グラフ</li>
-                    <li id="timer">時計</li>
-                </ul>
-                <ul class="content">
-                    <li><canvas id="myChart" width="600px" height="600px"></canvas></li>
-                    <li class="hide"><canvas id="circleChart" width="600px" height="600px"></canvas></li>
-                </ul>
             </div>
         </section>
 
@@ -75,197 +69,51 @@
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-    $(function() {
-
-
-        //タブ機能開始
-        //クリックしたときのファンクションをまとめて指定
-        $('.tab li').click(function() {
-
-            //.index()を使いクリックされたタブが何番目かを調べ、
-            //indexという変数に代入します。
-            var index = $('.tab li').index(this);
-
-            //コンテンツを一度すべて非表示にし、
-            $('.content li').css('display','none');
-
-            //クリックされたタブと同じ順番のコンテンツを表示します。
-            $('.content li').eq(index).css('display','block');
-
-            //一度タブについているクラスselectを消し、
-            $('.tab li').removeClass('select');
-
-            //クリックされたタブのみにクラスselectをつけます。
-            $(this).addClass('select')
-        });
-        //タブ機能終了
-
-
-        var ctx = document.getElementById("myChart").getContext("2d");
-        var ctx1 = document.getElementById("circleChart").getContext("2d");
-        var a = 0, b = 0 , c = 0 , d = 0;
-        var data_list = [a,b,c,d];
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ["1", "2", "3", "4"],
-                datasets: [{
-                    label: '投票結果',
-                    data: data_list,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                    ],
-                    borderWidth: 1
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["1", "2", "3", "4"],
+            datasets: [{
+                label: '投票結果',
+                data: [12, 19, 3, 5],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
                 }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
-                    }]
-                }
             }
-        });
+        }
+    });
+</script>
+<script>
 
-
-        //socket.io開始
+    $(function() {
         var socket = io.connect('http://192.168.33.10:3000');
         socket.on('sousin',function (data) {
-            switch (data.poll){
-                case "1":
-                    a++;
-                    data_list[0] = a;
-                    break;
-                case "2":
-                    b++;
-                    data_list[1] = b;
-                    break;
-                case "3":
-                    c++;
-                    data_list[2] = c;
-                    break;
-                case "4":
-                    d++;
-                    data_list[3] = d;
-                    break;
-            };
             console.log(data.poll);
-            console.log(data_list);
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ["1", "2", "3", "4"],
-                    datasets: [{
-                        label: '投票結果',
-                        data: data_list,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero:true
-                            }
-                        }]
-                    }
-                }
-            });
-            var data = {
-                labels: [
-                    "1",
-                    "2",
-                    "3",
-                    "4"
-                ],
-                datasets: [
-                    {
-                        data: data_list,
-                        backgroundColor: [
-                            "#FF6384",
-                            "#36A2EB",
-                            "#FFCE56",
-                            "#33DD44"
-                        ],
-                        hoverBackgroundColor: [
-                            "#FF6384",
-                            "#36A2EB",
-                            "#FFCE56",
-                            "#33DD44"
-                        ]
-                    }]
-            };
-
-
-            var myDoughnutChart = new Chart(ctx1, {
-                type: 'doughnut',
-                data: data
-            });
-
         });
-
-        //socket.io終了
-
-        //円グラフ描写
-        var data = {
-            labels: [
-                "1",
-                "2",
-                "3",
-                "4"
-            ],
-            datasets: [
-                {
-                    data: data_list,
-                    backgroundColor: [
-                        "#FF6384",
-                        "#36A2EB",
-                        "#FFCE56",
-                        "#33DD44"
-                    ],
-                    hoverBackgroundColor: [
-                        "#FF6384",
-                        "#36A2EB",
-                        "#FFCE56",
-                        "#33DD44"
-                    ]
-                }]
-        };
-
-
-        var myDoughnutChart = new Chart(ctx1, {
-            type: 'doughnut',
-            data: data
-        });
-        //円グラフ描写終了
-
-        var time = new Date();
+        socket.on("emit_from_server",function(data){
+            console.log(data.data);
+        })
 
     });
-
 </script>
 </body>
-</html>
