@@ -2,7 +2,6 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="/stylesheets/main.css" />
     <!-- Scripts -->
     <script src="/js/jquery.min.js"></script>
@@ -68,6 +67,7 @@
 
     </article>
 </div>
+<script src="/socket.io/socket.io.js"></script>
 <script>
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
@@ -101,6 +101,16 @@
                 }]
             }
         }
+    });
+</script>
+<script>
+
+    $(function() {
+        var socket = io.connect('http://192.168.33.10:3000');
+        socket.on('sousin',function (data) {
+            console.log(data.poll);
+        })
+
     });
 </script>
 </body>

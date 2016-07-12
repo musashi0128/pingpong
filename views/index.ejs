@@ -4,7 +4,8 @@
 		<title><%= title %></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />	
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="assets/js/jquery.min.js"></script>
 	</head>
 	<body>
 
@@ -61,13 +62,42 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			$(function() {
+				var socket = io('http://192.168.33.10:3000', {'transports': ['websocket', 'polling']});
+				socket.on('connect',function (message) {
+					console.log("接続しました");
+					console.log(socket.id);
+					socket.emit("entry",{value: socket.id+"さんが入室しました"});
+				});
+
+				socket.on("join",function (data) {
+					console.log(data.value);
+				})
+
+
+				function appendMessage(text) {
+					$("#messageView").append( "<div>" + text + "</div>" );
+				}
+
+
+				$('.button').click(function(){
+					socket.emit('vote', {vote_option: $(this).val()});
+					console.log($(this).val());
+					$('.button').remove();
+					$('.button_box').html('結果をお待ち下さい');
+					return false;
+				});
+
+			});
+		</script>
 
 	</body>
 </html>

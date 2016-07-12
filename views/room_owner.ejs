@@ -2,7 +2,6 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="/stylesheets/main.css" />
     <!-- Scripts -->
     <script src="/js/jquery.min.js"></script>
@@ -51,18 +50,19 @@
             <div class="inner">
                 <section>
                     <h4>Number & NAME</h4>
-                    <form method="get" action="/entry" class="form-inline">
-                        <div class="row uniform form-group">
+                    <form method="get" action="/vote_make">
+                        <div class="row uniform">
                             <div class="6u 12u$(xsmall)">
-                                <input type="text" name="roomnumber" id="rooms" value="" placeholder="RoomNumber" />
+                                <input type="text" name="demo-number" id="demo-email" value="" placeholder="Number" />
+
                             </div>
                             <div class="6u$ 12u$(xsmall)">
-                                <input type="text" name="name" id="name" value="" placeholder="Name" />
+                                <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
                             </div>
 
                             <div class="12u$">
                                 <ul class="actions">
-                                    <li><input type="submit" value="Room Init" class="special" id="sendButton" /></li>
+                                    <li><input type="submit" value="Room Init" class="special" /></li>
                                 </ul>
                             </div>
                         </div>
@@ -70,90 +70,10 @@
                 </section>
             </div>
         </section>
+
     </article>
+
 </div>
-
-<script src="/socket.io/socket.io.js"></script>
-<script type="text/javascript">
-        
-        // // emit_from_clientイベント・データを受信する
-        // socket.on("emit_from_client", function(data){appendMsg(data.value)});
-        // function appendMsg(text) {
-        //     //ここに表示するコンテンツを追加していく
-        //     //$("#chatLogs").append("<div>" + text + "</div>"); 
-        // }
-        // emit: イベントを発信している
-        // on: イベントを待ち受けている
-            $(function() {
-                var chat = io.connect("http://192.168.33.10:3000/chat"); // ソケットへの接続(namespace: chat)
-                //var isEnter = false;
-                var name = "";
-                
-                // 1
-                $(".form-inline").submit(function(e) {
-                    e.preventDefault();
-                    chat.json.emit("emit_from_client", {
-                        room: $("#rooms").val(), //roomの値を送る
-                        name: $("#name").val(), //nameの値を送る
-                });
-
-                // 2
-                    var io = require('socket.io').listen(server);
-                    var chatNS = io.of('/chat');
-                    chatNS.on('connection', function(socket){
-
-                        var roomName = 'room';
-
-                        //入室
-                        socket.join(roomName);
-
-                        //ルームに存在するsocketID一覧
-                        console.log(chatNS.adapter.rooms[roomName]);
-
-                        //ルームの全メンバーへメッセージ送信
-                        chatNS.to(roomName).emit('msg', 'room message');
-
-                        //socketIDは socket.io が接続ユーザーをユニークに判別するためのID
-                        var socketId = socket.id;
-
-                        //特定ユーザーへのメッセージ送信
-                        // to() はルーム名とsocketID両方を指定できる。
-                        // socketIDを指定した場合は特定ユーザーへのメッセージになる。
-                        chatNS.to(socketId).emit('msg', 'user message');
-                        
-                        //退室
-                        socket.leave(roomName);
-
-                        //ちなみに、これは全ルームにPUSH（全ユーザーにPUSH）
-                        chatNS.emit('msg', 'all user message');
-                    });
-
-                });
-
-                // // 2
-                // $(".form-inline").submit(function(e) {
-                //     var initname = $("#name").val();
-                //     var selectRoom = $("#rooms").val();
-                //     // 入力欄を空にする
-                //     $("#rooms").val('');
-                //     $("#name").val('');
-
-                //     if (isEnter) {
-                //       initname = "[" + name + "]: " + initname;
-                //         //  emit_from_clientイベント・データを送信する
-                //         socket.emit("emit_from_client", {value : initname});
-                //     } else {
-                //         name = initname;
-                //         var entryMessage = name + "さんが入室しました。";
-                //         socket.emit("emit_from_client_join", {value : selectRoom});
-                //         // emit_from_client_broadcastイベント・データを送信する
-                //         socket.emit("emit_from_client_personal", {value : name});
-                //     }
-                //     e.preventDefault();
-                // });
-            });
- 
-    </script>
 
 </body>
 </html>

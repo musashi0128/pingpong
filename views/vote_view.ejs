@@ -2,7 +2,10 @@
 <html>
 <head>
     <title><%= title %></title>
+<<<<<<< .merge_file_rh8KPP
     <link rel='stylesheet' href='/stylesheets/style.css' />
+=======
+>>>>>>> .merge_file_n1yn8C
     <link rel="stylesheet" href="/stylesheets/main.css" />
     <!-- Scripts -->
     <script src="/js/jquery.min.js"></script>
@@ -13,6 +16,7 @@
     <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
     <script src="/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<<<<<<< .merge_file_rh8KPP
     <script>
         window.onload = function () {
             var i = 4;
@@ -32,6 +36,22 @@
             });
         };
     </script>
+=======
+    <style>
+        .button{
+            width:200px;
+            height: 200px;
+            padding:0px !important;
+            text-align: center;
+            margin: 30px;
+        }
+        .button_box{
+            width:600px;
+            height: 600px;
+            margin: 0 auto !important;
+        }
+    </style>
+>>>>>>> .merge_file_n1yn8C
 
 </head>
 <body>
@@ -72,6 +92,7 @@
             <div class="inner">
                 <section>
                     <h4>質問記入欄</h4>
+<<<<<<< .merge_file_rh8KPP
                     <form method="get" action="/entry">
                         <div class="row uniform">
                             <div class="12u 12u$(xsmall)">
@@ -115,6 +136,22 @@
 
     </article>
 
+=======
+                    <form method="get" action="/vote_view" id="question">
+                        <div class="row uniform button_box">
+                            <input type="button" class="button" value="1" id="option1">
+                            <input type="button" class="button" value="2" id="option2">
+                            <input type="button" class="button" value="3" id="option3">
+                            <input type="button" class="button" value="4" id="option4">
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </section>
+        <div id="messageView"></div>
+
+    </article>
+>>>>>>> .merge_file_n1yn8C
 </div>
 </body>
 </html>
