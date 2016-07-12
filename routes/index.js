@@ -15,6 +15,9 @@ router.get('/owner',function (req,res,next) {
 router.get('/vote_make',function (req,res,next) {
   res.render('vote_make',{title:"アンケート作成"});
 });
+router.get('/vote_view',function (req,res,next) {
+  res.render('vote_view',{title:"アンケート回答"});
+});
 router.get('/member',function (req,res,next) {
   res.render('room_member',{title:"参加者"});
 });
