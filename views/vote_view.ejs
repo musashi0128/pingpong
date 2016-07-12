@@ -13,25 +13,20 @@
     <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
     <script src="/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script>
-        window.onload = function () {
-            var i = 4;
-            $("#option_add").click(function () {
-                i++
-                var option_number = "option"+ i;
-                var option_last = $(".row");
-                var option_text = "選択肢"+i+"つ目";
-                option_last.append('<div class="12u$ 12u$(xsmall)"> <input type="text" name="demo-name" id="'+option_number+'" value="" placeholder="'+option_text+'" /> </div>');
-            });
-            $("#option_delete").click(function () {
-                var option_number = "option"+ i;
-                $("#"+option_number+"").remove();
-                if(i>1){
-                    i--
-                }
-            });
-        };
-    </script>
+    <style>
+        .button{
+            width:200px;
+            height: 200px;
+            padding:0px !important;
+            text-align: center;
+            margin: 30px;
+        }
+        .button_box{
+            width:600px;
+            height: 600px;
+            margin: 0 auto !important;
+        }
+    </style>
 
 </head>
 <body>
@@ -73,48 +68,33 @@
                 <section>
                     <h4>質問記入欄</h4>
                     <form method="get" action="/entry">
-                        <div class="row uniform">
-                            <div class="12u 12u$(xsmall)">
-                                <input type="text" name="demo-number" id="demo-email" value="" placeholder="質問文を記入してください" />
-
-                            </div>
-                            <div class="12u$ 12u$(xsmall)">
-                                <input type="text" name="demo-name" id="option1" value="" placeholder="選択肢1つ目" />
-                            </div>
-                            <div class="12u$ 12u$(xsmall)">
-                                <input type="text" name="demo-name" id="option2" value="" placeholder="選択肢2つ目" />
-                            </div>
-                            <div class="12u$ 12u$(xsmall)">
-                                <input type="text" name="demo-name" id="option3" value="" placeholder="選択肢3つ目" />
-                            </div>
-                            <div class="12u$ 12u$(xsmall)">
-                                <input type="text" name="demo-name" id="option4" value="" placeholder="選択肢4つ目" />
-                            </div>
+                        <div class="row uniform button_box">
+                            <button class="button" id="option1">①</button>
+                            <button class="button" id="option2">②</button>
+                            <button class="button" id="option3">③</button>
+                            <button class="button" id="option4">④</button>
                         </div>
-
-
-                            <div class="12u$">
-                                <ul class="actions">
-                                    <li><input type="submit" value="質問作成！" class="special" /></li>
-                                </ul>
-                            </div>
                     </form>
-                    <div class="12u$">
-                        <ul class="actions">
-                            <li><input type="submit" value="選択肢削除" class="special" id="option_delete" /></li>
-                        </ul>
-                    </div>
-                    <div class="12u$">
-                        <ul class="actions">
-                            <li><input type="submit" value="選択肢追加" class="special" id="option_add" /></li>
-                        </ul>
-                    </div>
                 </section>
             </div>
         </section>
 
     </article>
 
+
 </div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    $(function() {
+        var chat = io.connect('http://192.168.33.10:3000/chat');
+
+
+        //参加者に反映させる部分
+        chat.on('emit_from_server', function(data) {
+            $('#logs').append($('<li>').text(data));
+        });
+
+    });
+</script>
 </body>
 </html>
