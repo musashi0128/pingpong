@@ -2,10 +2,7 @@
 <html>
 <head>
     <title><%= title %></title>
-<<<<<<< .merge_file_hWPJSC
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-=======
->>>>>>> .merge_file_EqIkR0
+
     <link rel="stylesheet" href="/stylesheets/main.css" />
     <!-- Scripts -->
     <script src="/js/jquery.min.js"></script>
@@ -16,27 +13,7 @@
     <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
     <script src="/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<<<<<<< .merge_file_hWPJSC
-    <script>
-        window.onload = function () {
-            var i = 4;
-            $("#option_add").click(function () {
-                i++
-                var option_number = "option"+ i;
-                var option_last = $(".row");
-                var option_text = "選択肢"+i+"つ目";
-                option_last.append('<div class="12u$ 12u$(xsmall)"> <input type="text" name="demo-name" id="'+option_number+'" value="" placeholder="'+option_text+'" /> </div>');
-            });
-            $("#option_delete").click(function () {
-                var option_number = "option"+ i;
-                $("#"+option_number+"").remove();
-                if(i>1){
-                    i--
-                }
-            });
-        };
-    </script>
-=======
+
     <style>
         .button{
             width:200px;
@@ -51,7 +28,7 @@
             margin: 0 auto !important;
         }
     </style>
->>>>>>> .merge_file_EqIkR0
+
 
 </head>
 <body>
@@ -92,51 +69,6 @@
             <div class="inner">
                 <section>
                     <h4>質問記入欄</h4>
-<<<<<<< .merge_file_hWPJSC
-                    <form method="get" action="/entry">
-                        <div class="row uniform">
-                            <div class="12u 12u$(xsmall)">
-                                <input type="text" name="demo-number" id="demo-email" value="" placeholder="質問文を記入してください" />
-
-                            </div>
-                            <div class="12u$ 12u$(xsmall)">
-                                <input type="text" name="demo-name" id="option1" value="" placeholder="選択肢1つ目" />
-                            </div>
-                            <div class="12u$ 12u$(xsmall)">
-                                <input type="text" name="demo-name" id="option2" value="" placeholder="選択肢2つ目" />
-                            </div>
-                            <div class="12u$ 12u$(xsmall)">
-                                <input type="text" name="demo-name" id="option3" value="" placeholder="選択肢3つ目" />
-                            </div>
-                            <div class="12u$ 12u$(xsmall)">
-                                <input type="text" name="demo-name" id="option4" value="" placeholder="選択肢4つ目" />
-                            </div>
-                        </div>
-
-
-                            <div class="12u$">
-                                <ul class="actions">
-                                    <li><input type="submit" value="質問作成！" class="special" /></li>
-                                </ul>
-                            </div>
-                    </form>
-                    <div class="12u$">
-                        <ul class="actions">
-                            <li><input type="submit" value="選択肢削除" class="special" id="option_delete" /></li>
-                        </ul>
-                    </div>
-                    <div class="12u$">
-                        <ul class="actions">
-                            <li><input type="submit" value="選択肢追加" class="special" id="option_add" /></li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
-        </section>
-
-    </article>
-
-=======
                     <form method="get" action="/vote_view" id="question">
                         <div class="row uniform button_box">
                             <input type="button" class="button" value="1" id="option1">
@@ -151,7 +83,7 @@
         <div id="messageView"></div>
 
     </article>
->>>>>>> .merge_file_EqIkR0
+
 </div>
 </body>
 </html>
