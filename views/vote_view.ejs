@@ -75,7 +75,7 @@
                     <form method="get" action="/entry">
                         <div class="row uniform">
                             <div class="12u 12u$(xsmall)">
-                                <input type="text" name="demo-number" id="quesion" value="" placeholder="質問文を記入してください" />
+                                <input type="text" name="demo-number" id="demo-email" value="" placeholder="質問文を記入してください" />
 
                             </div>
                             <div class="12u$ 12u$(xsmall)">
@@ -116,25 +116,5 @@
     </article>
 
 </div>
-
- <script src="/socket.io/socket.io.js"></script>
-    <script>
-        $(function() {
-            var chat = io.connect('http://192.168.33.10:3000/chat');
-                
-            // emit: イベントを発信している
-            // on: イベントを待ち受けている
-            $('#myForm').submit(function(e) {
-                e.preventDefault();
-                chat.json.emit('emit_from_client', {
-                    qs: $('#quesion').val(),
-                    op1: $('#option1').val(),
-                    op2: $('#option2').val(),
-                    op3: $('#option3').val(),
-                    op4: $('#option4').val()
-                });
-            });
-        });
-    </script>
 </body>
 </html>
