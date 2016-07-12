@@ -1,4 +1,5 @@
 var express = require('express');
+var io = require('socket.io')(http);
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -13,17 +14,13 @@ var mongoose = require("mongoose");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+
 //socket.ioに接続
 var app = express();
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
 
-//接続ている間に、メッセージを送ってもらう
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
-  });
-});
+
+
 
 // データベースを接続
 mongoose.connect("mongodb://localhost/blog");
@@ -63,6 +60,8 @@ app.use(flash());
 app.use('/', routes);
 app.use('/users', users);
 
+
 // ...省略
 
 module.exports = app;
+
