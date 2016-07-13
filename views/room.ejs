@@ -104,7 +104,6 @@
     });
 </script>
 <script>
-
     $(function() {
         var socket = io.connect('http://192.168.33.10:3000');
         socket.on('sousin',function (data) {
@@ -113,7 +112,6 @@
         socket.on("emit_from_server",function(data){
             console.log(data.data);
         })
-
     });
 </script>
 </body>
