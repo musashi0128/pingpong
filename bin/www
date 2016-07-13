@@ -29,11 +29,11 @@ function skio() {
 
     socket.on('emit_from_room', function(data) {
             socket.join(data.room);
-            // socket.emit('emit_from_server', '入室: ' + data.room);
-            socket.broadcast.to(data.room).emit('emit_from_server', {data: socket.id+"が接続しました"});
+            socket.broadcast.to(data.room).emit('emit_from_server', data.qs);
         });
     socket.on('emit_from_question',function(data) {
-          io.sockets.emit('emit_from_server',{data:data})
+          //io.sockets.emit('emit_from_server',{data:data})
+          //socket.broadcast.to(data.room).emit('emit_from_server', data.qs);
         })
 
     //切断時のメッセージ

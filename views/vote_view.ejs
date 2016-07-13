@@ -14,20 +14,20 @@
     <script src="/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
-        window.onload = function () {
-            var i = 4;
-            var v = 4;
-            $("#button_add").click(function () {
-                i++;
-                v++;
-                function add() {
-                    var div_element = document.createElement("#button_add");
-                    div_element.innerHTML = '<input type="button" value=v>';
-                    var parent_object = document.getElementById("add_button");
-                    parent_object.appendChild(div_element);
-                }
-            });
-        };
+        // window.onload = function () {
+        //     var i = 4;
+        //     var v = 4;
+        //     $("#button_add").click(function () {
+        //         i++;
+        //         v++;
+        //         function add() {
+        //             var div_element = document.createElement("#button_add");
+        //             div_element.innerHTML = '<input type="button" value=v>';
+        //             var parent_object = document.getElementById("add_button");
+        //             parent_object.appendChild(div_element);
+        //         }
+        //     });
+        // };
     </script>
     <style>
         .button{
@@ -106,11 +106,24 @@
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-    $(function() {
-        var chat = io.connect('http://192.168.33.10:3000');
-        chat.on('emit_from_server',function(data){
-            console.log(data.qs);
-            $('#logs').append($('<li>').text(data.qs));
+    //$(function() {
+        $("#button_add").click(function () {
+        //var chat = io.connect('http://192.168.33.10:3000');
+        var socket = io.connect();
+                 console.log(data.qs);
+        socket.on('emit_from_server', function(data) {
+                     $('#logs').append($('<li>').text(data.qs));
+                     //$('#add_button').append($('<div>').text(data.op1));
+        });
+ 
+
+        //$("#button_add").click(function () {
+
+        
+
+        // chat.on('emit_from_server',function(data){
+        //     console.log(data.qs);
+        //     $('#logs').append($('<li>').text(data.qs));
             // var i = 4;
             // $("#button_add").click(function () {
             //     i++;
@@ -121,7 +134,8 @@
             //     }
             // });
         });
-    });
+    //});
+
 </script>
 </body>
 </html>
